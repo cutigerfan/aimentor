@@ -1,7 +1,8 @@
 import streamlit as st
 import openai
 
-openai.api_key = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "your-api-key"
+from openai import OpenAI
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "your-api-key")
 
 st.set_page_config(page_title="Mentor Match AI Chatbot", page_icon="🔎")
 st.title("🌟 Mentor Match AI Chatbot")
@@ -37,7 +38,7 @@ if user_query:
 
     with st.spinner("Finding your mentor match..."):
         try:
-            response = openai.ChatCompletion.create(
+            response = client.chat.completions.create(
                 model="gpt-4",
                 messages=[
                     {"role": "system", "content": "You are a helpful AI mentor-matching assistant."},
