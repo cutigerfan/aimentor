@@ -1,17 +1,13 @@
-# Clemson PAW Journey Mentor Chatbot (Prototype)
+# Clemson PAW Journey Mentor Chatbot (with Resume Upload)
 
-This prototype demonstrates an AI-powered chatbot experience for student-athletes to find mentor matches through natural language queries.
+This prototype demonstrates an AI-powered chatbot for student-athletes to discover mentors, now enhanced with a resume upload feature.
 
-Branded for:
-- Clemson University
-- PAW Journey Program
+## Features:
+- Clemson-branded interface
+- GPT-3.5-powered chatbot
+- Upload and preview mentor resumes (PDF format)
 
-Built using:
-- Streamlit
-- OpenAI (GPT-3.5 Turbo)
-- Hosted on Streamlit Cloud
-
-### How to Run
-1. Clone this repo
-2. Create `.streamlit/secrets.toml` with your OpenAI key
-3. Run: `streamlit run mentor_match.py`
+## How to Run
+1. Clone or upload this repo to Streamlit Cloud
+2. Add `.streamlit/secrets.toml` with your OpenAI API key
+3. Run with: `streamlit run mentor_match.py`
