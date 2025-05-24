@@ -1,6 +1,7 @@
 import streamlit as st
 import openai
 
+# Use OpenAI's new client structure (openai>=1.0.0)
 from openai import OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "your-api-key")
 
@@ -39,7 +40,7 @@ if user_query:
     with st.spinner("Finding your mentor match..."):
         try:
             response = client.chat.completions.create(
-                model="gpt-4",
+                model="gpt-3.5-turbo",  # Use GPT-3.5 as a fallback if GPT-4 is not available
                 messages=[
                     {"role": "system", "content": "You are a helpful AI mentor-matching assistant."},
                     {"role": "user", "content": prompt}
