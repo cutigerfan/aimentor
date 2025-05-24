@@ -6,6 +6,7 @@ This prototype demonstrates an AI-powered chatbot for student-athletes to discov
 - Clemson-branded interface
 - GPT-3.5-powered chatbot
 - Upload and preview mentor resumes (PDF format)
+- Resume content is summarized and used in chatbot matching during the current session only (not stored)
 
 ## How to Run
 1. Clone or upload this repo to Streamlit Cloud
