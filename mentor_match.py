@@ -5,9 +5,29 @@ import openai
 from openai import OpenAI
 client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else "your-api-key")
 
-st.set_page_config(page_title="Mentor Match AI Chatbot", page_icon="🔎")
-st.title("🌟 Mentor Match AI Chatbot")
-st.markdown("Helping student-athletes discover mentors with shared journeys.")
+# Apply Clemson color scheme and branding
+st.set_page_config(page_title="Clemson PAW Journey Mentor Chatbot", page_icon="🌟")
+
+# Clemson branding header
+st.markdown("""
+    <div style='background-color:#F56600; padding: 10px 20px; border-radius: 10px;'>
+        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Clemson_Tigers_logo.svg/512px-Clemson_Tigers_logo.svg.png' width='60' style='float:left; margin-right:20px;'>
+        <h1 style='color:white;'>Clemson University PAW Journey Mentor Chatbot</h1>
+        <p style='color:white;'>Helping student-athletes discover mentors who share their path and passion.</p>
+    </div>
+""", unsafe_allow_html=True)
+
+# Optional: PAW Journey logo
+st.image("https://www.clemson.edu/studentaffairs/images/paw-journey-logo.png", width=200)
+
+# Welcome message
+st.markdown("""
+    ### 👋 Welcome Student-Athletes!
+    Use this tool to ask any question that might help you find a mentor. For example:
+    - "I'm interested in someone who went from football to law."
+    - "I'd like to connect with a first-generation college grad in STEM."
+    - "Is there a mentor who's worked in product design after athletics?"
+""")
 
 mentor_profiles = [
     {
@@ -40,7 +60,7 @@ if user_query:
     with st.spinner("Finding your mentor match..."):
         try:
             response = client.chat.completions.create(
-                model="gpt-3.5-turbo",  # Use GPT-3.5 as a fallback if GPT-4 is not available
+                model="gpt-3.5-turbo",
                 messages=[
                     {"role": "system", "content": "You are a helpful AI mentor-matching assistant."},
                     {"role": "user", "content": prompt}
@@ -52,3 +72,14 @@ if user_query:
             st.write(reply)
         except Exception as e:
             st.error(f"Something went wrong: {e}")
+
+# Footer with Clemson resources
+st.markdown("""
+    <hr>
+    <small>
+    <p style='text-align: center;'>
+        This chatbot is a pilot tool of the <strong>PAW Journey Program</strong> at Clemson University.<br>
+        For more information, visit <a href='https://www.clemson.edu/studentaffairs/paw-journey/' target='_blank'>PAW Journey</a> or contact your student-athlete development coordinator.
+    </p>
+    </small>
+""", unsafe_allow_html=True)

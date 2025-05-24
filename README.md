@@ -1,10 +1,14 @@
-# Mentor Match AI Chatbot (Prototype)
+# Clemson PAW Journey Mentor Chatbot (Prototype)
 
 This prototype demonstrates an AI-powered chatbot experience for student-athletes to find mentor matches through natural language queries.
 
+Branded for:
+- Clemson University
+- PAW Journey Program
+
 Built using:
 - Streamlit
-- OpenAI (GPT-4 or GPT-3.5)
+- OpenAI (GPT-3.5 Turbo)
 - Hosted on Streamlit Cloud
 
 ### How to Run
