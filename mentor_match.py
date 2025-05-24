@@ -11,14 +11,14 @@ st.set_page_config(page_title="Clemson PAW Journey Mentor Chatbot", page_icon="ð
 # Clemson branding header
 st.markdown("""
     <div style='background-color:#F56600; padding: 10px 20px; border-radius: 10px;'>
-        <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Clemson_Tigers_logo.svg/512px-Clemson_Tigers_logo.svg.png' width='60' style='float:left; margin-right:20px;'>
+        <img src='https://clemsontigers.com/wp-content/themes/clemsontigers/assets/images/logo.png' width='60' style='float:left; margin-right:20px;'>
         <h1 style='color:white;'>Clemson University PAW Journey Mentor Chatbot</h1>
         <p style='color:white;'>Helping student-athletes discover mentors who share their path and passion.</p>
     </div>
 """, unsafe_allow_html=True)
 
 # Optional: PAW Journey logo
-st.image("https://www.clemson.edu/studentaffairs/images/paw-journey-logo.png", width=200)
+st.image("https://media.licdn.com/dms/image/v2/C4D0BAQH1IwiNsCY4Cw/company-logo_400_400/company-logo_400_400/0/1644423090763?e=2147483647&v=beta&t=xSHp5_M2oUGtxua7DLjZtKUUeCzQdlvD-RreJGZRaMY", width=200)
 
 # Welcome message
 st.markdown("""
